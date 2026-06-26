@@ -1,110 +1,280 @@
-# Engineering India Website
+## Prerequisites
 
-Official website project for Engineering India RBU.
+Install the following before contributing:
 
----
-
-## 🎯 Objective
-
-The goal of this project is to design and develop a modern, scalable, and maintainable website that effectively represents Engineering India, its initiatives, events, achievements, and community.
-
-This project is also intended to provide contributors with hands-on experience working in a collaborative software engineering environment using industry-standard tools and workflows.
+* Git
+* Node.js **v20 LTS or later**
+* npm
+* VS Code (Recommended)
 
 ---
 
-## 🚧 Current Phase
+## Clone Repository
 
-**Discovery & Planning**
+```bash
+git clone <repository-url>
 
-The team is currently working on:
-
-- Requirement gathering
-- Website planning
-- Design research
-- Information architecture
-- UI/UX exploration
-- Technology evaluation
-
-Development will begin after the planning and design phases are completed.
-
----
-
-## 👥 Teams
-
-### Design Team
-Responsible for:
-- Research
-- Wireframes
-- UI/UX Design
-- Design System
-- User Experience
-
-### Engineering Team
-Responsible for:
-- Technical Architecture
-- Development
-- Code Reviews
-- Testing
-- Deployment
-
----
-
-## 🔄 Project Workflow
-
-```text
-Idea
-↓
-Discussion
-↓
-Planning
-↓
-Design
-↓
-Approval
-↓
-Development
-↓
-Review
-↓
-Testing
-↓
-Deployment
+cd engineering-india-website
 ```
 
 ---
 
-## s📅 Sprint Cadence
+## Install Dependencies
 
-- Monday — Sprint Planning
-- Wednesday — Progress Sync
-- Saturday — Review & Demo
-
----
-
-## 🛠 Project Management
-
-Work is managed through:
-
-- GitHub Projects
-- GitHub Issues
-- GitHub Milestones
-
-All tasks, discussions, and progress tracking should be documented through GitHub.
+```bash
+npm install
+```
 
 ---
 
-## 💬 Communication
+## Run Development Server
 
-Team communication is managed through the Engineering India Discord workspace.
+```bash
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:5173
+```
 
 ---
 
-## 📚 Documentation
+## Build Project
 
-Project documentation, design decisions, architecture discussions, and implementation details will be maintained within this repository as the project evolves.
+```bash
+npm run build
+```
 
 ---
 
-## 📌 Note
+## Branch Naming Convention
 
-The technology stack and local development setup are currently under evaluation and will be documented once finalized.
+Always create a feature branch.
+
+Never work directly on `main`.
+
+Examples:
+
+```text
+feature/navbar
+
+feature/hero-section
+
+feature/about-section
+
+feature/events-page
+
+fix/navbar-mobile
+
+docs/readme-update
+```
+
+---
+
+## Development Workflow
+
+### 1.
+
+Sync latest code
+
+```bash
+git checkout main
+
+git pull origin main
+```
+
+---
+
+### 2.
+
+Create a new branch
+
+```bash
+git checkout -b feature/navbar
+```
+
+---
+
+### 3.
+
+Implement your assigned ticket.
+
+---
+
+### 4.
+
+Commit
+
+```bash
+git add .
+
+git commit -m "feat: implement responsive navbar"
+```
+
+---
+
+### 5.
+
+Push
+
+```bash
+git push origin feature/navbar
+```
+
+---
+
+### 6.
+
+Open a Pull Request.
+
+---
+
+### 7.
+
+Assign reviewers.
+
+---
+
+### 8.
+
+Address review comments if any.
+
+---
+
+### 9.
+
+Merge only after approval.
+
+---
+
+# Repository Structure
+
+```text
+src
+│
+├── assets
+├── components
+│   ├── common
+│   ├── layout
+│   └── sections
+│
+├── data
+├── hooks
+├── pages
+├── routes
+├── styles
+├── types
+└── utils
+```
+
+---
+
+# Coding Guidelines
+
+* Use functional React components.
+* Keep components small and reusable.
+* Do not hardcode repeated values.
+* Reuse existing styles wherever possible.
+* Test your changes before creating a PR.
+
+---
+
+# Need Help?
+
+Discuss implementation questions in the Engineering Discord server before making major architectural changes.
+
+---
+
+# 📋 Instructions for Team Members (From Scratch)
+
+When you assign a ticket, this is the workflow every member should follow.
+
+### 1. Clone the repository (first time only)
+
+```bash
+git clone <repository-url>
+cd engineering-india-website
+```
+
+---
+
+### 2. Install dependencies (first time only)
+
+```bash
+npm install
+```
+
+---
+
+### 3. Before starting any new task
+
+```bash
+git checkout main
+
+git pull origin main
+```
+
+This ensures they are working with the latest code.
+
+---
+
+### 4. Create a feature branch
+
+Example:
+
+```bash
+git checkout -b feature/team-section
+```
+
+---
+
+### 5. Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+### 6. Implement only your assigned ticket
+
+Do **not** modify unrelated files.
+
+---
+
+### 7. Build before pushing
+
+```bash
+npm run build
+```
+
+If the build fails, fix it before creating a PR.
+
+---
+
+### 8. Commit changes
+
+```bash
+git add .
+
+git commit -m "feat: implement team section"
+```
+
+---
+
+### 9. Push the branch
+
+```bash
+git push origin feature/team-section
+```
+
+---
+
+### 10. Open a Pull Request
+
+* Link the issue (`Closes #<issue-number>` if applicable).
+* Request the required reviewers.
+* Wait for approval.
+* Do **not** merge your own PR unless the project rules allow it.
