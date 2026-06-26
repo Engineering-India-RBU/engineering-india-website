@@ -5,7 +5,7 @@ Install the following before contributing:
 * Git
 * Node.js **v20 LTS or later**
 * npm
-* VS Code (Recommended)
+* VS Code (Recommended)/Antigravity/Cursor, etc.
 
 ---
 
