@@ -5,6 +5,7 @@ import './styles/variables.css';
 import './styles/typography.css';
 import './styles/global.css';
 import './styles/animations.css';
+import './styles/team.css';
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
