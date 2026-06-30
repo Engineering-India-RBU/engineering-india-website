@@ -1,3 +1,5 @@
+import krishImage from "./photos/krish.jpg";
+import sirimg from "./photos/butoliya_sir.png";
 export interface TeamMember {
   id: number;
   name: string;
@@ -11,7 +13,7 @@ export const facultyCoordinator: TeamMember = {
   id: 1,
   name: "Dr. S. S. Butoliya",
   role: "Faculty Coordinator",
-  image: "/images/team/faculty/dr-butoliya.jpg",
+  image: sirimg,
   introduction:
     "Faculty Coordinator of Engineering India – RBU, dedicated to mentoring students, fostering innovation, and guiding technical initiatives that promote learning, leadership, and collaborative growth.",
 };
@@ -31,7 +33,7 @@ export const coreTeam: TeamMember[] = [
     id: 3,
     name: "Krish",
     role: "Secretary",
-    image: "/images/team/core/member2.jpg",
+    image: krishImage,
   },
 
   {
