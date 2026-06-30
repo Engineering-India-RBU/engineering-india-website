@@ -1,134 +1,359 @@
 /* ===========================
-   TEAM PAGE
+   CREATIVE TEAM PAGE STYLES
 =========================== */
 
-.team-section {
-    max-width: var(--container-width);
+:root {
+    --primary-color: #0F172A;
+    --secondary-color: #2563EB;
+    --accent-saffron: #FF9933;
+    --accent-green: #138808;
+    --background: #FFFFFF;
+    --surface-light: #F8FAFC;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.team-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
+    min-height: 80vh;
+    background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 153, 51, 0.03) 0%, transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Engineering Grid Background */
+.team-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.team-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .team-title {
-    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   CREATIVE TOGGLE SWITCH
+=========================== */
+
+.toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.creative-toggle {
+    background: rgba(15, 23, 42, 0.05);
+    padding: 6px;
+    border-radius: 100px;
+    display: flex;
+    gap: 8px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.toggle-btn {
+    padding: 12px 32px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-btn--active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.toggle-btn:hover:not(.toggle-btn--active) {
+    background: rgba(15, 23, 42, 0.08);
+    color: var(--primary-color);
+}
+
+/* ===========================
+   CONTENT ANIMATIONS
+=========================== */
+
+.view-content {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   FACULTY CARD (CREATIVE)
+=========================== */
+
+.faculty-showcase {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.faculty-card-creative {
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    position: relative;
+}
+
+.faculty-card-creative::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 6px; height: 100%;
+    background: linear-gradient(to bottom, var(--accent-saffron), var(--accent-green));
+}
+
+.faculty-image-container {
+    flex: 0 0 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.faculty-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.faculty-card-creative:hover .faculty-image-container img {
+    transform: scale(1.05);
+}
+
+.faculty-info {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.faculty-label {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--secondary-color);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.faculty-name {
+    font-size: 2.75rem;
+    font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-.team-description {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
+.faculty-quote {
+    font-style: italic;
     color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    position: relative;
 }
 
-.team-heading {
-    margin: 4rem 0 2rem;
-    text-align: center;
+.faculty-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: rgba(37, 99, 235, 0.1);
+    position: absolute;
+    top: -2rem; left: -1.5rem;
+    font-family: serif;
+}
+
+.faculty-stats {
+    display: flex;
+    gap: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 2rem;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item strong {
+    font-size: 1.1rem;
     color: var(--primary-color);
 }
 
 /* ===========================
-   TEAM GRID
+   CORE TEAM GRID (CREATIVE)
 =========================== */
 
-.team-grid {
+.team-grid-creative {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
-/* ===========================
-   PROFILE CARD
-=========================== */
-
-.profile-card {
-    background: var(--background);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-
-    padding: 2rem;
-
+.member-card-creative {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    text-align: center;
-
-    transition: transform var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
-.profile-card:hover {
-    transform: translateY(-6px);
+.member-card-creative:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.2);
 }
 
-.profile-card__image {
-    width: 170px;
-    height: 170px;
-
-    object-fit: cover;
+.member-image-wrapper {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-
-    margin-bottom: 1.25rem;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--accent-saffron), var(--accent-green));
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
 }
 
-.profile-card__content {
+.member-card-creative:hover .member-image-wrapper {
+    transform: rotate(5deg);
+}
+
+.member-image-wrapper img {
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
 }
 
-.profile-card__name {
-    color: var(--primary-color);
-    margin-bottom: 0.4rem;
-}
-
-.profile-card__role {
+.member-role-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--secondary-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    background: rgba(37, 99, 235, 0.08);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
 }
 
-.profile-card__introduction {
+.member-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.member-dept {
+    font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 1.25rem;
 }
 
-.profile-card__linkedin {
-    display: inline-block;
-
-    color: var(--secondary-color);
-
-    font-weight: 600;
-
-    transition: color 0.2s ease;
+.member-socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
 }
 
-.profile-card__linkedin:hover {
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--surface-light);
     color: var(--primary-color);
+    transition: var(--transition);
 }
 
-/* ===========================
-   FACULTY CARD
-=========================== */
-
-.profile-card--faculty {
-    max-width: 900px;
-    margin: 0 auto;
+.social-icon:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
 }
 
-@media (min-width: 768px) {
-
-    .profile-card--faculty {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 2rem;
+/* Responsive adjustments */
+@media (max-width: 968px) {
+    .faculty-card-creative {
+        flex-direction: column;
     }
-
-    .profile-card--faculty .profile-card__image {
-        margin-bottom: 0;
-        flex-shrink: 0;
+    .faculty-image-container {
+        flex: 0 0 350px;
     }
-
-    .profile-card--faculty .profile-card__content {
-        flex: 1;
+    .faculty-info {
+        padding: 2.5rem;
+    }
+    .team-title {
+        font-size: 2.5rem;
     }
 }
