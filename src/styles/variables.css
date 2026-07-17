@@ -7,10 +7,12 @@
   /* --- Brand Colors (Indian Tricolor Accents) --- */
   /* Saffron: Used sparingly for primary calls to action, badges, or hover states */
   --color-brand-saffron: #FF9933; 
+  --color-brand-saffron-hover: #ffaa55;
   /* Green: Used for success states, secondary accents, or subtle underlines */
   --color-brand-green: #138808;
   /* Navy: From the Ashoka Chakra, excellent for bold headings, deep background sections, or footers */
   --color-brand-navy: #000080; 
+  --color-brand-navy-hover: #000066;
 
   /* --- Neutral Background Colors (To keep the design clean and minimal) --- */
   --color-bg-main: #FFFFFF;        /* Pure white for main content areas */
