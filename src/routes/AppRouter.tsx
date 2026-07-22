@@ -7,6 +7,7 @@ import Events from "../pages/Events";
 import Gallery from "../pages/Gallery";
 import Highlights from "../pages/Highlights";
 import Contact from "../pages/Contact";
+import Alumni from "../pages/Alumni";
 
 export default function AppRouter() {
   return (
@@ -19,6 +20,7 @@ export default function AppRouter() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/highlights" element={<Highlights />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/alumni" element={<Alumni />} />
       </Routes>
     </BrowserRouter>
   );

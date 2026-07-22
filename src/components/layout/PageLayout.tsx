@@ -10,7 +10,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      {children}
       <Footer />
     </>
   );
