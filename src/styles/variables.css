@@ -13,4 +13,10 @@
     --shadow:
         0 8px 24px rgba(0,0,0,0.08);
 
+
+  --border-color: #cbd5e1;
+  --placeholder-bg: #d1d5db;
+  --saffron-color: #ff9933;
+  --green-color: #138808;
+  --font-main: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }

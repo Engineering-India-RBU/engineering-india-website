@@ -57,9 +57,9 @@ export default function Highlights() {
   return (
     <div
       style={{
-        fontFamily: "'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif",
-        backgroundColor: '#ffffff',
-        color: '#0f172a',
+        fontFamily: 'var(--font-main)',
+        backgroundColor: 'var(--background)',
+        color: 'var(--text-primary)',
         minHeight: '100vh',
         boxSizing: 'border-box',
       }}
@@ -72,7 +72,7 @@ export default function Highlights() {
           textAlign: 'center',
           background:
             'linear-gradient(90deg, rgba(255,153,51,0.12) 0%, rgba(255,255,255,1) 50%, rgba(19,136,8,0.12) 100%)',
-          borderBottom: '1px solid #e2e8f0',
+          borderBottom: '1px solid var(--border-color)',
         }}
       >
         <div
@@ -82,7 +82,7 @@ export default function Highlights() {
             left: 0,
             right: 0,
             height: '4px',
-            background: 'linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%)',
+            background: 'linear-gradient(90deg, var(--saffron-color) 0%, #ffffff 50%, var(--green-color) 100%)',
           }}
         />
 
@@ -90,7 +90,7 @@ export default function Highlights() {
           style={{
             fontSize: '2.2rem',
             fontWeight: 900,
-            color: '#1d4ed8',
+            color: 'var(--secondary-color)',
             letterSpacing: '0.04em',
             margin: 0,
             textTransform: 'uppercase',
@@ -101,7 +101,7 @@ export default function Highlights() {
 
         <p
           style={{
-            color: '#334155',
+            color: 'var(--text-secondary)',
             fontSize: '0.95rem',
             fontWeight: 600,
             marginTop: '0.5rem',
@@ -112,7 +112,7 @@ export default function Highlights() {
         </p>
       </div>
 
-      {/* Main Container - Flexbox Row Grid */}
+      {/* Main Container - 2 Column Grid */}
       <div
         style={{
           maxWidth: '1200px',
@@ -125,7 +125,7 @@ export default function Highlights() {
             display: 'flex',
             flexWrap: 'wrap',
             gap: '1.25rem',
-            justify: 'space-between',
+            justifyContent: 'space-between',
           }}
         >
           {highlightItems.map((item) => (
@@ -135,10 +135,10 @@ export default function Highlights() {
                 width: 'calc(50% - 0.65rem)',
                 minWidth: '320px',
                 display: 'flex',
-                backgroundColor: '#ffffff',
-                border: '1px solid #cbd5e1',
-                borderRadius: '10px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.04)',
+                backgroundColor: 'var(--background)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--border-radius)',
+                boxShadow: 'var(--shadow)',
                 overflow: 'hidden',
                 boxSizing: 'border-box',
               }}
@@ -148,14 +148,14 @@ export default function Highlights() {
                 style={{
                   width: '38%',
                   minWidth: '130px',
-                  backgroundColor: '#d1d5db',
-                  borderRight: '1px solid #cbd5e1',
+                  backgroundColor: 'var(--placeholder-bg)',
+                  borderRight: '1px solid var(--border-color)',
                   display: 'flex',
                   alignItems: 'center',
-                  justify: 'center',
+                  justifyContent: 'center',
                   padding: '0.75rem',
                   textAlign: 'center',
-                  color: '#374151',
+                  color: 'var(--text-primary)',
                   fontWeight: 700,
                   fontSize: '0.75rem',
                   lineHeight: '1.3',
@@ -173,7 +173,7 @@ export default function Highlights() {
                   padding: '1rem',
                   display: 'flex',
                   flexDirection: 'column',
-                  justify: 'space-between',
+                  justifyContent: 'space-between',
                   boxSizing: 'border-box',
                 }}
               >
@@ -183,7 +183,7 @@ export default function Highlights() {
                       margin: 0,
                       fontSize: '1.05rem',
                       fontWeight: 800,
-                      color: '#0f172a',
+                      color: 'var(--primary-color)',
                     }}
                   >
                     {item.title}
@@ -193,7 +193,7 @@ export default function Highlights() {
                       margin: '0.2rem 0 0.4rem 0',
                       fontSize: '0.8rem',
                       fontWeight: 700,
-                      color: '#2563eb',
+                      color: 'var(--secondary-color)',
                     }}
                   >
                     {item.subtitle}
@@ -202,7 +202,7 @@ export default function Highlights() {
                     style={{
                       margin: 0,
                       fontSize: '0.78rem',
-                      color: '#475569',
+                      color: 'var(--text-secondary)',
                       lineHeight: '1.4',
                     }}
                   >
@@ -216,7 +216,7 @@ export default function Highlights() {
                     marginTop: '0.5rem',
                     fontSize: '0.7rem',
                     fontWeight: 600,
-                    color: '#64748b',
+                    color: 'var(--text-secondary)',
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '0.3rem',
