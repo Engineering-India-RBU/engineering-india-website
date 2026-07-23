@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "../ui/ThemeToggle";
 import "./Navbar.css";
 
 const navItems = [
@@ -47,9 +48,15 @@ export default function Navbar() {
           <li className="nav-join-mobile">
             <Link to="/contact" className="nav-join-btn">Join Us</Link>
           </li>
+          <li className="nav-theme-mobile">
+            <ThemeToggle />
+          </li>
         </ul>
 
-        <Link to="/contact" className="nav-join-btn nav-join-desktop">Join Us</Link>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <Link to="/contact" className="nav-join-btn nav-join-desktop">Join Us</Link>
+        </div>
 
         <button
           className="nav-hamburger"

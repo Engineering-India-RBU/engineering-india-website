@@ -77,12 +77,24 @@
   transform: scale(1.02);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-join-desktop {
   display: block;
 }
 
 .nav-join-mobile {
   display: none;
+}
+
+.nav-theme-mobile {
+  display: none;
+  width: 100%;
+  margin-top: 12px;
 }
 
 /* Hamburger */
@@ -171,6 +183,17 @@
   .nav-join-mobile .nav-join-btn {
     display: block;
     text-align: center;
+  }
+
+  .nav-theme-mobile {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .nav-theme-mobile .theme-toggle {
+    width: 100%;
+    justify-content: center;
   }
 
   .nav-hamburger {

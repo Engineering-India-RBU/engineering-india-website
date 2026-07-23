@@ -1,5 +1,8 @@
-:root {
-  /* Primary - Deep Navy */
+/* ==============================
+   THEME: Professional (Navy + Teal)
+   ============================== */
+:root,
+.theme-professional {
   --primary: #0F172A;
   --primary-container: #1E293B;
   --primary-fixed: #DBEAFE;
@@ -9,7 +12,6 @@
   --on-primary-fixed: #0F172A;
   --on-primary-fixed-variant: #1E3A5F;
 
-  /* Secondary - Cyan / Teal */
   --secondary: #0891B2;
   --secondary-container: #CFFAFE;
   --secondary-fixed: #E0F2FE;
@@ -19,7 +21,6 @@
   --on-secondary-fixed: #0C4A6E;
   --on-secondary-fixed-variant: #0E7490;
 
-  /* Tertiary - Warm Amber */
   --tertiary: #D97706;
   --tertiary-container: #FEF3C7;
   --tertiary-fixed: #FDE68A;
@@ -29,7 +30,6 @@
   --on-tertiary-fixed: #451A03;
   --on-tertiary-fixed-variant: #92400E;
 
-  /* Surface / Background */
   --background: #F8FAFC;
   --surface: #FFFFFF;
   --surface-bright: #FFFFFF;
@@ -47,21 +47,90 @@
   --inverse-on-surface: #F8FAFC;
   --inverse-primary: #93C5FD;
 
-  /* Error */
   --error: #DC2626;
   --error-container: #FEE2E2;
   --on-error: #FFFFFF;
   --on-error-container: #991B1B;
 
-  /* Outline */
   --outline: #CBD5E1;
   --outline-variant: #E2E8F0;
   --surface-tint: #0F172A;
 
-  /* Typography */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 30px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.15);
+}
+
+/* ==============================
+   THEME: Stitch (Terracotta + Olive)
+   ============================== */
+.theme-stitch {
+  --primary: #944a22;
+  --primary-container: #e88d5f;
+  --primary-fixed: #ffdbcb;
+  --primary-fixed-dim: #ffb693;
+  --on-primary: #ffffff;
+  --on-primary-container: #652701;
+  --on-primary-fixed: #341000;
+  --on-primary-fixed-variant: #76330c;
+
+  --secondary: #5c6320;
+  --secondary-container: #dfe694;
+  --secondary-fixed: #e1e897;
+  --secondary-fixed-dim: #c5cc7e;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #616724;
+  --on-secondary-fixed: #1a1d00;
+  --on-secondary-fixed-variant: #454a08;
+
+  --tertiary: #715c22;
+  --tertiary-container: #bba160;
+  --tertiary-fixed: #fde099;
+  --tertiary-fixed-dim: #e0c47f;
+  --on-tertiary: #ffffff;
+  --on-tertiary-container: #493700;
+  --on-tertiary-fixed: #241a00;
+  --on-tertiary-fixed-variant: #57440b;
+
+  --background: #fdf9f0;
+  --surface: #fdf9f0;
+  --surface-bright: #fdf9f0;
+  --surface-dim: #dddad1;
+  --surface-container: #f1eee5;
+  --surface-container-low: #f7f3ea;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #ece8df;
+  --surface-container-highest: #e6e2d9;
+  --surface-variant: #e6e2d9;
+  --on-surface: #1c1c17;
+  --on-surface-variant: #54433b;
+  --on-background: #1c1c17;
+  --inverse-surface: #31312b;
+  --inverse-on-surface: #f4f0e8;
+  --inverse-primary: #ffb693;
+
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error: #ffffff;
+  --on-error-container: #93000a;
+
+  --outline: #87736a;
+  --outline-variant: #dac2b7;
+  --surface-tint: #944a22;
+
+  --shadow-sm: 0 1px 3px rgba(45, 41, 38, 0.06);
+  --shadow-md: 0 4px 20px rgba(45, 41, 38, 0.05);
+  --shadow-lg: 0 8px 32px rgba(45, 41, 38, 0.08);
+  --shadow-xl: 0 16px 48px rgba(45, 41, 38, 0.12);
+}
+
+/* ==============================
+   SHARED TOKENS
+   ============================== */
+:root {
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -69,7 +138,6 @@
   --radius-2xl: 24px;
   --radius-full: 9999px;
 
-  /* Spacing */
   --unit: 4px;
   --stack-xs: 4px;
   --stack-sm: 8px;
@@ -80,10 +148,4 @@
   --margin-mobile: 16px;
   --margin-desktop: 40px;
   --container-max: 1280px;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 8px 30px rgba(15, 23, 42, 0.1);
-  --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.15);
 }
