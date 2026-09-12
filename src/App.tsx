@@ -1,8 +1,14 @@
+import Navbar from './components/layout/Navbar'
+import HomePage from './pages/home/page'
+import Footer from './components/layout/Footer'
+
 function App() {
   return (
-    <main>
-      <h1>Engineering India — RBU</h1>
-    </main>
+    <>
+      <Navbar />
+      <HomePage />
+      <Footer />
+    </>
   )
 }
 

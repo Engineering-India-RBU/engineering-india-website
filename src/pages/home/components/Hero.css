@@ -1,0 +1,112 @@
+/* .hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-surface);
+  
+} */
+ .hero {
+  padding-top: 80px;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 50%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: var(--space-20);
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin: 0 0 var(--space-4);
+  color: rgb(255 255 255 / 80%);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  width: 100%;
+  margin: 0;
+  color: var(--color-surface);
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1.05;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hero__description {
+  max-width: 700px;
+  margin: var(--space-6) auto 0;
+  color: rgb(255 255 255 / 88%);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 68px;
+  }
+
+  .hero__content {
+    align-items: flex-start;
+    padding-block: var(--space-16);
+    text-align: left;
+  }
+
+  .hero h1 {
+    width: 100%;
+    font-size: clamp(2.6rem, 12vw, 4rem);
+    white-space: normal;
+    text-align: left;
+  }
+
+  .hero__description {
+    max-width: 100%;
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .hero__actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

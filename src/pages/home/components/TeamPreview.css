@@ -1,0 +1,361 @@
+.team-preview {
+  padding-block: clamp(5rem, 10vw, 9rem);
+  background: var(--color-background);
+}
+
+.team-preview__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.team-preview__eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-preview h2 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.team-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* ========================================
+   Flip Card
+   ======================================== */
+
+.team-card {
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  perspective: 1200px;
+  text-align: left;
+  outline: none;
+}
+
+.team-card__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-slow) var(--ease-standard);
+}
+
+.team-card--flipped .team-card__inner {
+  transform: rotateY(180deg);
+}
+
+.team-card__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Front
+   ======================================== */
+
+.team-card__front {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: var(--space-8);
+  background: var(--color-navy);
+  color: var(--color-surface);
+  text-align: center;
+}
+
+.team-card__front::before {
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  content: '';
+  pointer-events: none;
+}
+
+.team-card__brand {
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  color: rgb(255 255 255 / 60%);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.16em;
+}
+
+.team-card__role {
+  position: relative;
+  color: var(--color-surface);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.team-card__role::after {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin: var(--space-5) auto 0;
+  background: var(--color-saffron);
+  content: '';
+}
+
+/* ========================================
+   Back
+   ======================================== */
+
+.team-card__back {
+  align-items: center;
+  flex-direction: column;
+  transform: rotateY(180deg);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.team-card__image-wrapper {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 0.9;
+  overflow: hidden;
+  background: var(--color-surface-muted);
+}
+
+.team-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card__details {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+}
+
+.team-card__name {
+  display: block;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.team-card__position {
+  display: block;
+  margin: var(--space-2) 0 0;
+  color: var(--color-saffron);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-card__academic {
+  display: block;
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.04em;
+}
+
+.team-card__academic span {
+  margin-inline: 0.25rem;
+  color: var(--color-saffron);
+}
+
+.team-card__description {
+  display: block;
+  margin: var(--space-4) 0 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* ========================================
+   Social Links
+   ======================================== */
+
+.team-card__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-5);
+}
+
+.team-card__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.team-card__socials a:hover {
+  border-color: var(--color-navy);
+  background: var(--color-navy);
+  color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+.team-card__socials svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ========================================
+   Desktop Interaction
+   ======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-card__inner {
+    transform: rotateY(180deg);
+  }
+
+  .team-card--flipped:hover .team-card__inner {
+    transform: rotateY(0deg);
+  }
+}
+
+/* ========================================
+   Keyboard Focus
+   ======================================== */
+
+.team-card:focus-visible {
+  border-radius: var(--radius-lg);
+  outline: 3px solid var(--color-saffron);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   Tablet
+   ======================================== */
+
+@media (max-width: 900px) {
+  .team-preview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-8);
+  }
+}
+
+/* ========================================
+   Mobile
+   ======================================== */
+
+@media (max-width: 600px) {
+  .team-preview__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .team-preview__header .button {
+    width: 100%;
+  }
+
+  .team-preview__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .team-card {
+    aspect-ratio: 3 / 4;
+  }
+
+  .team-card__front {
+    padding: var(--space-4);
+  }
+
+  .team-card__front::before {
+    inset: 0.6rem;
+  }
+
+  .team-card__brand {
+    bottom: var(--space-4);
+    left: var(--space-4);
+    font-size: 0.5rem;
+  }
+
+  .team-card__role {
+    font-size: 1.35rem;
+  }
+
+  .team-card__details {
+    padding: 1rem;
+  }
+
+  .team-card__name {
+    font-size: 1.1rem;
+  }
+
+  .team-card__position {
+    font-size: 0.65rem;
+  }
+
+  .team-card__academic {
+    font-size: 0.65rem;
+  }
+
+  .team-card__description {
+    font-size: 0.7rem;
+  }
+
+  .team-card__socials {
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+  }
+
+  .team-card__socials a {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .team-card__socials svg {
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+}

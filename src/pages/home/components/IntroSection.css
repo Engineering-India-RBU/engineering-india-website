@@ -1,0 +1,37 @@
+.intro-section {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.intro-section__content {
+  max-width: 900px;
+}
+
+.intro-section__eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.intro-section h2 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.12;
+}
+
+.intro-section__description {
+  max-width: 680px;
+  margin: var(--space-6) 0 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.intro-section .button {
+  margin-top: var(--space-8);
+}
