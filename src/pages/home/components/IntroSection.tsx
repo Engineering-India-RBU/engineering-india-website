@@ -8,17 +8,17 @@ function IntroSection() {
     <section className="intro-section">
       <Container>
         <div className="intro-section__content">
-          <p className="intro-section__eyebrow">
-            {INTRO_CONTENT.eyebrow}
-          </p>
+          <h2>{INTRO_CONTENT.eyebrow}</h2>
 
-          <h2>{INTRO_CONTENT.title}</h2>
+          <p className="intro-section__subtitle">
+            {INTRO_CONTENT.title}
+          </p>
 
           <p className="intro-section__description">
             {INTRO_CONTENT.description}
           </p>
 
-          <Button variant="secondary">
+          <Button variant="secondary" href="/about">
             {INTRO_CONTENT.action}
           </Button>
         </div>

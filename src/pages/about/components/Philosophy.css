@@ -1,0 +1,169 @@
+.about-philosophy {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(7rem, 13vw, 11rem);
+  background: var(--color-navy);
+}
+
+.about-philosophy::before {
+  position: absolute;
+  top: -20rem;
+  left: 50%;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(255 153 51 / 16%) 0%,
+    rgb(255 153 51 / 0%) 70%
+  );
+  content: '';
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.about-philosophy__figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-philosophy__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin: 0;
+  color: var(--color-saffron);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.about-philosophy__eyebrow::before,
+.about-philosophy__eyebrow::after {
+  width: clamp(2rem, 6vw, 4rem);
+  height: 1px;
+  background: rgb(255 153 51 / 45%);
+  content: '';
+}
+
+.about-philosophy__mark {
+  margin-top: var(--space-8);
+  color: var(--color-saffron);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 6rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 0.55;
+}
+
+.about-philosophy__quote {
+  max-width: 20ch;
+  margin: var(--space-10) auto 0;
+  color: var(--color-surface);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.4vw, 2.7rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.32;
+  text-wrap: balance;
+}
+
+.about-philosophy__attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  color: rgb(255 255 255 / 85%);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.about-philosophy__attribution::before {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-saffron);
+  content: '';
+}
+
+.about-philosophy__supporting {
+  max-width: 58ch;
+  margin: var(--space-10) 0 0;
+  color: rgb(255 255 255 / 62%);
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.85;
+}
+
+.about-philosophy--reveal .about-philosophy__eyebrow,
+.about-philosophy--reveal .about-philosophy__mark,
+.about-philosophy--reveal .about-philosophy__quote,
+.about-philosophy--reveal .about-philosophy__attribution,
+.about-philosophy--reveal .about-philosophy__supporting {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease-standard),
+    transform 700ms var(--ease-standard);
+}
+
+.about-philosophy--reveal.about-philosophy--visible
+  .about-philosophy__eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-philosophy--reveal.about-philosophy--visible
+  .about-philosophy__mark {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+.about-philosophy--reveal.about-philosophy--visible
+  .about-philosophy__quote {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 260ms;
+}
+
+.about-philosophy--reveal.about-philosophy--visible
+  .about-philosophy__attribution {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 420ms;
+}
+
+.about-philosophy--reveal.about-philosophy--visible
+  .about-philosophy__supporting {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 560ms;
+}
+
+@media (max-width: 640px) {
+  .about-philosophy__eyebrow::before,
+  .about-philosophy__eyebrow::after {
+    width: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-philosophy--reveal .about-philosophy__eyebrow,
+  .about-philosophy--reveal .about-philosophy__mark,
+  .about-philosophy--reveal .about-philosophy__quote,
+  .about-philosophy--reveal .about-philosophy__attribution,
+  .about-philosophy--reveal .about-philosophy__supporting {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

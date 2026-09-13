@@ -9,17 +9,17 @@ function FinalCTA() {
       <Container>
         <div className="final-cta__box">
           <div className="final-cta__content">
-            <p className="final-cta__eyebrow">
-              {FINAL_CTA.eyebrow}
-            </p>
+            <h2>{FINAL_CTA.eyebrow}</h2>
 
-            <h2>{FINAL_CTA.title}</h2>
+            <p className="final-cta__subtitle">
+              {FINAL_CTA.title}
+            </p>
 
             <p className="final-cta__description">
               {FINAL_CTA.description}
             </p>
 
-            <Button variant="primary">
+            <Button variant="primary" href="/join">
               {FINAL_CTA.action}
             </Button>
           </div>

@@ -5,7 +5,7 @@ import { TEAM_PREVIEW } from '../constants'
 import {
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
+  FaEnvelope,
 } from 'react-icons/fa'
 import './TeamPreview.css'
 
@@ -15,18 +15,12 @@ function TeamPreview() {
       <Container>
         <div className="team-preview__header">
           <div>
-            <p className="team-preview__eyebrow">Our Team</p>
+            <h2>Our Team</h2>
 
-            <h2>
-              The people behind
-              <br />
-              Engineering India.
-            </h2>
+            <p className="team-preview__subtitle">
+              The people behind Engineering India.
+            </p>
           </div>
-
-          <Button variant="secondary">
-            Meet the Team
-          </Button>
         </div>
 
         <div className="team-preview__grid">
@@ -43,6 +37,12 @@ function TeamPreview() {
             />
           ))}
         </div>
+
+        <div className="team-preview__footer">
+          <Button href="/team" variant="secondary">
+            Meet the Team
+          </Button>
+        </div>
       </Container>
     </section>
   )
@@ -58,7 +58,7 @@ type TeamCardProps = {
   socials: {
     instagram: string
     linkedin: string
-    whatsapp: string
+    email: string
   }
 }
 
@@ -171,17 +171,15 @@ function TeamCard({
                 </a>
 
                 <a
-                    href={socials.whatsapp || '#'}
-                    target={socials.whatsapp ? '_blank' : undefined}
-                    rel={socials.whatsapp ? 'noopener noreferrer' : undefined}
-                    aria-label={`Contact ${name} on WhatsApp`}
+                    href={socials.email ? `mailto:${socials.email}` : '#'}
+                    aria-label={`Email ${name}`}
                     onClick={(event) => {
-                    if (!socials.whatsapp) {
+                    if (!socials.email) {
                         event.preventDefault()
                     }
                     }}
                 >
-                    <FaWhatsapp aria-hidden="true" />
+                    <FaEnvelope aria-hidden="true" />
                 </a>
                 </div>
           </div>

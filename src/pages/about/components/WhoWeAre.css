@@ -1,0 +1,110 @@
+.about-who {
+  padding-block: clamp(6rem, 11vw, 9rem);
+  background: var(--color-surface);
+}
+
+.about-who__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.about-who__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-6);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.about-who__eyebrow::after {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-saffron);
+  content: '';
+}
+
+.about-who h2 {
+  max-width: 15ch;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: clamp(1.7rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.about-who__body {
+  max-width: 60ch;
+}
+
+.about-who__body p {
+  margin: 0 0 var(--space-6);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.about-who__body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-who--reveal .about-who__heading,
+.about-who--reveal .about-who__body p {
+  opacity: 0;
+  transition:
+    opacity 700ms var(--ease-standard),
+    transform 700ms var(--ease-standard);
+}
+
+.about-who--reveal .about-who__heading {
+  transform: translateX(-28px);
+}
+
+.about-who--reveal .about-who__body p {
+  transform: translateY(24px);
+}
+
+.about-who--reveal.about-who--visible .about-who__heading,
+.about-who--reveal.about-who--visible .about-who__body p {
+  opacity: 1;
+  transform: none;
+}
+
+.about-who--reveal.about-who--visible .about-who__heading {
+  transition-delay: 0ms;
+}
+
+.about-who--reveal.about-who--visible .about-who__body p {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+@media (max-width: 900px) {
+  .about-who__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-who h2 {
+    max-width: 22ch;
+  }
+
+  .about-who--reveal .about-who__heading {
+    transform: translateY(-24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-who--reveal .about-who__heading,
+  .about-who--reveal .about-who__body p {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

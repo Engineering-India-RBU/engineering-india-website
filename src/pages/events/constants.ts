@@ -1,9 +1,9 @@
 export const EVENTS_HERO = {
   eyebrow: 'Events & Experiences',
-  title: 'Moments that',
-  accent: 'move you.',
+  title: 'Where Ideas',
+  accent: 'Come Alive.',
   description:
-    'From flagship festivals to technical challenges, every Engineering India event is crafted to spark curiosity, sharpen skills, and bring people together.',
+    'From social initiatives to technical challenges, every event is an opportunity to learn, connect, contribute, and turn ideas into action.',
 } as const
 
 export type ClubEvent = {
@@ -239,7 +239,7 @@ const RAW_EVENTS: Omit<ClubEvent, 'href'>[] = [
       'Gained practical exposure to building AI solutions with minimal coding',
       'Interacted with Prabodh Mahajan Ji through an online session from London',
     ],
-    tagline: 'Think Digitally, Build Practically.',
+    tagline: '',
     image: '/events/chatbot.webp',
   },
 

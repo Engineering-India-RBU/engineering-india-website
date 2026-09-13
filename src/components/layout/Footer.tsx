@@ -1,7 +1,6 @@
 import {
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa'
 import Container from '../ui/Container'
@@ -58,24 +57,6 @@ function Footer() {
                 }}
             >
                 <FaLinkedinIn aria-hidden="true" />
-            </a>
-
-            <a
-                href={FOOTER_CONTENT.socials.whatsapp || '#'}
-                target={FOOTER_CONTENT.socials.whatsapp ? '_blank' : undefined}
-                rel={
-                FOOTER_CONTENT.socials.whatsapp
-                    ? 'noopener noreferrer'
-                    : undefined
-                }
-                aria-label="Engineering India on WhatsApp"
-                onClick={(event) => {
-                if (!FOOTER_CONTENT.socials.whatsapp) {
-                    event.preventDefault()
-                }
-                }}
-            >
-                <FaWhatsapp aria-hidden="true" />
             </a>
 
             <a

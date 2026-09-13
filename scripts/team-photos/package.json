@@ -1,0 +1,14 @@
+{
+  "name": "team-photos",
+  "private": true,
+  "description": "Converts raw team photos (HEIC/JPG/PNG) into normalized 640x800 WebP cards for public/team.",
+  "scripts": {
+    "convert": "node converter.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "4.22.0",
+    "@vladmandic/face-api": "1.7.15",
+    "heic-convert": "2.1.0",
+    "sharp": "0.35.4"
+  }
+}

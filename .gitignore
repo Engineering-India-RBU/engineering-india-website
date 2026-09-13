@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+team-raw
+scripts/team-photos/node_modules
 
 # Editor directories and files
 .vscode/*
