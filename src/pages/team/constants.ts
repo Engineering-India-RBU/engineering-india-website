@@ -747,9 +747,9 @@ export const PRESENT_TEAM: TeamMember[] = [
 
 {
   name: 'Kamakshi Palekar',
-  role: '',
-  year: '',
-  branch: '',
+  role: 'Coordinator',
+  year: '2nd Year',
+  branch: 'CSE',
   image: '/team/kamakshi-palekar.webp',
    socials: {
     instagram: 'https://www.instagram.com/palekarkamakshi?stkn=YTVzZ3NzYTZsZGh5',
@@ -760,8 +760,8 @@ export const PRESENT_TEAM: TeamMember[] = [
 
 {
   name: 'Parth Gawande',
-  role: '',
-  year: '',
+  role: 'Coordinator',
+  year: '2nd Year',
   branch: '',
   image: '',
    socials: {
