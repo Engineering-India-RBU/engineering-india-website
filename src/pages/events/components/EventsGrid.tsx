@@ -92,7 +92,7 @@ function EventsGrid({ events }: { events: readonly ClubEvent[] }) {
         }
       },
       {
-        threshold: 0.12,
+        threshold: 0,
       },
     )
 

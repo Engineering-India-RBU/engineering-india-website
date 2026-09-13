@@ -37,7 +37,7 @@ function FeaturedEvent({ event }: { event: ClubEvent }) {
         }
       },
       {
-        threshold: 0.18,
+        threshold: 0,
       },
     )
 
