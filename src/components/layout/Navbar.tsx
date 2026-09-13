@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import Container from '../ui/Container'
 import Button from '../ui/Button'
@@ -19,19 +20,23 @@ function Navbar() {
       <Container>
         <nav className="navbar__inner" aria-label="Main navigation">
           <a className="navbar__brand" href="/">
-            Engineering India
+            <img
+              className="navbar__logo"
+              src="/homepage/Engineering India logo.png"
+              alt="Engineering India"
+            />
           </a>
 
           <div className="navbar__links">
             {NAV_ITEMS.map((item) => (
-              <a key={item.label} href={item.href}>
+              <NavLink key={item.label} to={item.href} end={item.href === '/'}>
                 {item.label}
-              </a>
+              </NavLink>
             ))}
           </div>
 
           <div className="navbar__desktop-action">
-            <Button>Join Us</Button>
+            <Button href="/join">Join Us</Button>
           </div>
 
           <button
@@ -58,16 +63,17 @@ function Navbar() {
                 ×
             </button>
             {NAV_ITEMS.map((item) => (
-              <a
+              <NavLink
                 key={item.label}
-                href={item.href}
+                to={item.href}
+                end={item.href === '/'}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
 
-            <Button>Join Us</Button>
+            <Button href="/join">Join Us</Button>
           </div>
         )}
       </Container>

@@ -53,6 +53,13 @@
   --shadow-md: 0 8px 24px rgb(0 0 0 / 10%);
   --shadow-lg: 0 16px 40px rgb(0 0 0 / 12%);
 
+  /* Deep / dark sections (Events page) */
+  --color-dark-bg: #0b0b10;
+  --color-dark-surface: #121218;
+  --color-dark-raise: #1a1a22;
+  --color-dark-line: rgb(255 255 255 / 10%);
+  --color-gold: #ffb45c;
+
   /* Motion */
   --duration-fast: 150ms;
   --duration-normal: 250ms;

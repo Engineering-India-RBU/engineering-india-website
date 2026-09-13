@@ -1,5 +1,5 @@
 .our-events {
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
   background: var(--color-text-primary);
   color: var(--color-surface);
   overflow: hidden;
@@ -9,35 +9,65 @@
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.our-events__eyebrow {
-  margin: 0 0 var(--space-4);
-  color: var(--color-saffron);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 .our-events h2 {
-  max-width: 800px;
   margin: 0;
   color: var(--color-surface);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.1;
+  text-align: center;
+}
+
+.our-events__subtitle {
+  max-width: 800px;
+  margin: var(--space-6) auto 0;
+  color: rgb(255 255 255 / 90%);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .our-events__track {
   display: flex;
-  gap: clamp(1rem, 2vw, 1.5rem);
-  overflow-x: auto;
-  padding-bottom: var(--space-4);
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  width: max-content;
+  overflow: hidden;
+  animation: our-events-marquee 40s linear infinite;
 }
 
-.our-events__track::-webkit-scrollbar {
-  display: none;
+.our-events__group {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding-right: clamp(1rem, 2vw, 1.5rem);
+}
+
+.our-events__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+@keyframes our-events-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .our-events__track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .our-events__track {
+    animation: none;
+  }
 }
 
 .our-events__card {
@@ -134,5 +164,17 @@
 
   .our-events h2 {
     font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  .our-events__subtitle {
+    white-space: normal;
+  }
+
+  .our-events__footer {
+    margin-top: var(--space-8);
+  }
+
+  .our-events__footer .button {
+    width: 100%;
   }
 }

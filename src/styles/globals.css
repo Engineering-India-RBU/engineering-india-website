@@ -103,3 +103,14 @@ a {
   color: var(--color-surface);
   border-color: var(--color-surface);
 }
+
+.button--ghost {
+  background: transparent;
+  color: var(--color-surface);
+  border-color: rgb(255 255 255 / 35%);
+}
+
+.button--ghost:hover {
+  background: rgb(255 255 255 / 8%);
+  border-color: var(--color-surface);
+}

@@ -1,0 +1,106 @@
+.events-cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 7vw, 5.5rem) clamp(5rem, 10vw, 8rem);
+  background-color: var(--color-dark-bg);
+  color: var(--color-surface);
+}
+
+.events-cta__box {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 6vw, 5rem);
+  overflow: hidden;
+
+  border: 1px solid var(--color-dark-line);
+  border-radius: var(--radius-xl);
+
+  background:
+    radial-gradient(560px 320px at 50% -20%, rgb(255 153 51 / 13%), transparent 68%),
+    radial-gradient(520px 320px at 88% 120%, rgb(0 0 128 / 34%), transparent 64%),
+    var(--color-dark-surface);
+
+  text-align: center;
+}
+
+.events-cta__box::before {
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: calc(var(--radius-xl) - 0.5rem);
+  pointer-events: none;
+  content: '';
+}
+
+.events-cta__content {
+  position: relative;
+  z-index: 1;
+}
+
+.events-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: 0;
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.events-cta__eyebrow::before,
+.events-cta__eyebrow::after {
+  width: clamp(1.5rem, 4vw, 3rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+  content: '';
+}
+
+.events-cta__eyebrow::after {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.events-cta h2 {
+  max-width: 20ch;
+  margin: var(--space-6) auto 0;
+  color: var(--color-surface);
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.events-cta__description {
+  max-width: 620px;
+  margin: var(--space-6) auto 0;
+  color: rgb(255 255 255 / 68%);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.8;
+}
+
+.events-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .events-cta__box {
+    border-radius: var(--radius-lg);
+    padding: 3rem 1.5rem;
+  }
+
+  .events-cta__actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

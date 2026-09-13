@@ -1,9 +1,11 @@
 type ButtonProps = {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'light'
+  variant?: 'primary' | 'secondary' | 'light' | 'ghost'
   type?: 'button' | 'submit' | 'reset'
   onClick?: () => void
   className?: string
+  href?: string
+  target?: string
 }
 
 function Button({
@@ -12,12 +14,29 @@ function Button({
   type = 'button',
   onClick,
   className = '',
+  href,
+  target,
 }: ButtonProps) {
+  const classes = `button button--${variant} ${className}`
+
+  if (href != null) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`button button--${variant} ${className}`}
+      className={classes}
     >
       {children}
     </button>

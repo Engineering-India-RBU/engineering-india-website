@@ -2,7 +2,6 @@ import Hero from './components/Hero'
 import IntroSection from './components/IntroSection'
 import FeaturedInitiative from './components/FeaturedInitiative'
 import OurEvents from './components/OurEvents'
-import TeamPreview from './components/TeamPreview'
 import FinalCTA from './components/FinalCTA'
 
 function HomePage() {
@@ -12,7 +11,6 @@ function HomePage() {
       <IntroSection />
       <FeaturedInitiative />
       <OurEvents />
-      <TeamPreview />
       <FinalCTA />
     </main>
   )
