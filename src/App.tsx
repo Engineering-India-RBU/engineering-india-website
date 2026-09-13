@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import GaneshGreetingModal from './components/ui/GaneshGreetingModal'
 
 import HomePage from './pages/home/page'
 import AboutPage from './pages/about/page'
@@ -23,6 +24,8 @@ function App() {
       </Routes>
 
       <Footer />
+
+      <GaneshGreetingModal />
     </BrowserRouter>
   )
 }

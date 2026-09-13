@@ -17,8 +17,8 @@ export const FEATURED_INITIATIVE = {
   eyebrow: 'ABHYUDAYA',
   title: 'परं वैभवं नेतुमेतत् स्वराष्ट्रम्',
   description:
-    'From conversations and competitions to community-driven initiatives, Engineering India creates platforms where students can learn, collaborate, and make an impact.',
-  videoUrl: 'https://www.youtube.com/embed/REPLACE_WITH_YOUTUBE_VIDEO_ID',
+    'Central Nagpur\'s Largest Socio- Technical Festival, Abhyudaya is a student-driven initiative that brings together ideas, people, and experiences to create meaningful impact in the community.',
+  videoUrl: 'https://www.youtube.com/embed/ManBIyCPHNE?si=sYSvhgj4lJEYkWzr',
 } as const
 
 export const TEAM_PREVIEW = [

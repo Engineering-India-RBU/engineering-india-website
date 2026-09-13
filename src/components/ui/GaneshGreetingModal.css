@@ -1,0 +1,773 @@
+/* ============================================================
+   Ganesh Chaturthi — premium invitation greeting modal
+   Ivory / saffron / muted gold palette. CSS-only ornamentation.
+   ============================================================ */
+
+.gc-overlay {
+  --gc-ivory: #fffdf6;
+  --gc-cream: #fdf7e9;
+  --gc-parchment: #f7ecda;
+  --gc-gold: #9c7a1e;
+  --gc-gold-line: rgb(178 128 42 / 55%);
+  --gc-saffron: #b45309;
+  --gc-brown: #5b4428;
+
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal) + 10);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  padding: clamp(1rem, 4vw, 2rem);
+
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      ellipse 58% 52% at 50% 48%,
+      rgb(255 176 88 / 13%),
+      rgb(255 150 60 / 5%) 46%,
+      transparent 72%
+    ),
+    radial-gradient(ellipse 130% 100% at 50% 118%, rgb(15 6 2 / 58%), transparent 60%),
+    rgb(22 11 3 / 62%);
+  backdrop-filter: blur(4px) saturate(0.9);
+
+  animation: gc-overlay-in 380ms ease both;
+}
+
+.gc-overlay--leaving {
+  animation: gc-overlay-out 420ms ease forwards;
+}
+
+@keyframes gc-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gc-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---------- Ambient petals ---------- */
+
+.gc-petal {
+  position: absolute;
+  top: 0;
+
+  border-radius: 100% 0 100% 0 / 58% 0 62% 0;
+
+  background: linear-gradient(150deg, #e8a34b 0%, #d97a1e 55%, #c65f12 100%);
+
+  opacity: 0;
+  pointer-events: none;
+
+  animation: gc-fall linear infinite;
+}
+
+@keyframes gc-fall {
+  0% {
+    transform: translate3d(0, -60px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--petal-opacity, 0.5);
+  }
+  45% {
+    transform: translate3d(calc(var(--drift, 120px) * -0.45), 44vh, 0) rotate(235deg);
+    opacity: var(--petal-opacity, 0.5);
+  }
+  82% {
+    opacity: var(--petal-opacity, 0.5);
+  }
+  100% {
+    transform: translate3d(var(--drift, 120px), calc(100vh + 120px), 0) rotate(560deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Golden ambient sparks ---------- */
+
+.gc-spark {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: var(--radius-full);
+
+  background: radial-gradient(circle, rgb(255 244 208 / 90%), rgb(233 168 78 / 32%) 55%, transparent 74%);
+
+  filter: drop-shadow(0 0 3px rgb(233 158 66 / 55%));
+  opacity: 0;
+  pointer-events: none;
+
+  animation: gc-twinkle ease-in-out infinite;
+}
+
+@keyframes gc-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1) translateY(-3px);
+  }
+  60% {
+    opacity: 0.4;
+  }
+}
+
+/* ---------- Card surface ---------- */
+
+.gc-card {
+  position: relative;
+
+  width: min(100%, 560px);
+  margin: auto;
+
+  border: 1px solid rgb(176 128 40 / 60%);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(circle at 18% 10%, rgb(196 146 58 / 7%), transparent 36%),
+    radial-gradient(circle at 84% 16%, rgb(196 146 58 / 6%), transparent 40%),
+    radial-gradient(rgb(122 86 30 / 6%) 0.55px, transparent 0.9px),
+    linear-gradient(168deg, var(--gc-ivory) 0%, var(--gc-cream) 48%, var(--gc-parchment) 100%);
+  background-size:
+    auto,
+    auto,
+    5px 5px,
+    auto;
+
+  box-shadow:
+    0 1px 2px rgb(60 30 0 / 8%),
+    0 5px 14px rgb(60 30 0 / 12%),
+    0 26px 52px rgb(35 12 0 / 34%);
+
+  overflow: hidden;
+
+  animation: gc-card-in 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gc-card::after {
+  /* thin inner frame */
+  content: '';
+  position: absolute;
+  inset: 9px;
+  z-index: 3;
+
+  border: 1px solid rgb(180 130 45 / 32%);
+  border-radius: calc(var(--radius-lg) - 8px);
+
+  pointer-events: none;
+}
+
+.gc-overlay--leaving .gc-card {
+  animation: gc-card-out 380ms ease forwards;
+}
+
+@keyframes gc-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.965);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gc-card-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+}
+
+/* ---------- Corner ornamentation ---------- */
+
+.gc-corner {
+  position: absolute;
+  z-index: 4;
+
+  width: 46px;
+  height: 46px;
+
+  pointer-events: none;
+}
+
+.gc-corner--tl {
+  top: 18px;
+  left: 18px;
+}
+
+.gc-corner--bl {
+  bottom: 18px;
+  left: 18px;
+}
+
+.gc-corner--br {
+  bottom: 18px;
+  right: 18px;
+}
+
+/* L-shaped corner lines (bottom corners only) */
+
+.gc-corner--bl::before,
+.gc-corner--br::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgb(180 130 45 / 45%);
+  border-radius: 14px;
+}
+
+.gc-corner--bl::before {
+  border-right: none;
+  border-top: none;
+
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.gc-corner--br::before {
+  border-left: none;
+  border-top: none;
+
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* small mandala rosette */
+
+.gc-corner::after {
+  content: '';
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  border: 1px solid rgb(176 126 40 / 55%);
+  border-radius: var(--radius-full);
+
+  background:
+    radial-gradient(circle, rgb(176 126 40 / 85%) 0 1.5px, transparent 2.4px),
+    repeating-conic-gradient(from 0deg, rgb(176 126 40 / 34%) 0 30deg, transparent 0 45deg);
+}
+
+.gc-corner--tl::after {
+  right: -2px;
+  bottom: -2px;
+}
+
+.gc-corner--bl::after {
+  right: -2px;
+  top: -2px;
+}
+
+.gc-corner--br::after {
+  bottom: -2px;
+  left: -2px;
+}
+
+/* ---------- Close button ---------- */
+
+.gc-card__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  padding: 0;
+
+  border: 1px solid rgb(176 128 40 / 55%);
+  border-radius: var(--radius-full);
+
+  background: var(--gc-ivory);
+
+  color: #a16207;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+
+  box-shadow: 0 1px 6px rgb(60 30 0 / 14%);
+
+  transition:
+    background-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.gc-card__close:hover {
+  background: #fdf3df;
+  color: #85430a;
+  box-shadow: 0 2px 8px rgb(60 30 0 / 18%);
+}
+
+.gc-card__close:focus-visible {
+  outline: 2px solid rgb(150 80 10 / 55%);
+  outline-offset: 2px;
+}
+
+.gc-card__close:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Body & content rhythm ---------- */
+
+.gc-card__body {
+  position: relative;
+  z-index: 1;
+
+  padding: 24px 48px 20px;
+
+  text-align: center;
+
+  animation: gc-body-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.18s;
+}
+
+@keyframes gc-body-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Ganesha emblem ---------- */
+
+.gc-ganesha {
+  position: relative;
+
+  width: 118px;
+  height: 140px;
+
+  margin: 0 auto 14px;
+
+  animation: gc-ganesha-in 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.45s;
+}
+
+.gc-ganesha__halo {
+  position: absolute;
+  inset: -6px -2px -4px;
+
+  border-radius: var(--radius-full);
+
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgb(255 198 122 / 30%),
+    rgb(240 170 90 / 12%) 52%,
+    transparent 74%
+  );
+}
+
+.gc-ganesha__img {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: drop-shadow(0 8px 16px rgb(110 55 10 / 24%));
+}
+
+@keyframes gc-ganesha-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- Brand & ceremonial text ---------- */
+
+.gc-card__logo {
+  width: 118px;
+  height: auto;
+  margin: 0 auto 14px;
+}
+
+.gc-card__kicker {
+  margin: 0 0 8px;
+
+  color: #a16207;
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.14em;
+}
+
+.gc-card__title {
+  margin: 0;
+
+  background: linear-gradient(180deg, #c8711c 0%, #b45a0d 55%, #96460a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.6vw, 1.8rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.gc-card__title-line {
+  display: block;
+}
+
+.gc-card__hindi {
+  margin: 10px 0 0;
+
+  color: #915312;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.9;
+}
+
+/* ---------- Ornamental divider ---------- */
+
+.gc-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin: 12px 0 10px;
+}
+
+.gc-divider__line {
+  width: 48px;
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgb(180 130 45 / 72%));
+}
+
+.gc-divider__line:last-of-type {
+  transform: scaleX(-1);
+}
+
+.gc-divider__rosette {
+  width: 11px;
+  height: 11px;
+
+  border: 1px solid rgb(176 126 40 / 52%);
+  border-radius: var(--radius-full);
+
+  background:
+    radial-gradient(circle, rgb(176 126 40 / 80%) 0 1.2px, transparent 2px),
+    repeating-conic-gradient(from 0deg, rgb(176 126 40 / 34%) 0 30deg, transparent 0 45deg);
+}
+
+.gc-divider__om {
+  color: #a16207;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+}
+
+/* ---------- Sanskrit shloka ---------- */
+
+.gc-card__shloka {
+  margin: 0;
+
+  color: #7a4c22;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  line-height: 1.95;
+}
+
+.gc-card__shloka-line {
+  display: block;
+}
+
+/* ---------- English message ---------- */
+
+.gc-card__message {
+  margin: 12px auto 0;
+
+  color: var(--gc-brown);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* ---------- Diya base ---------- */
+
+.gc-card__base {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(2rem, 7vw, 3.25rem);
+
+  padding: 16px 0 11px;
+
+  border-top: 1px solid rgb(180 130 45 / 45%);
+
+  background: linear-gradient(
+    180deg,
+    rgb(228 168 96 / 0%) 0%,
+    rgb(228 168 96 / 15%) 34%,
+    rgb(208 140 60 / 26%) 100%
+  );
+}
+
+.gc-card__base::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 24%;
+  right: 24%;
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgb(180 130 45 / 40%), transparent);
+}
+
+.gc-diya {
+  position: relative;
+
+  width: 56px;
+  height: 44px;
+}
+
+.gc-diya__glow {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+
+  width: 34px;
+  height: 26px;
+
+  transform: translateX(-50%);
+
+  border-radius: var(--radius-full);
+
+  background: radial-gradient(
+    circle,
+    rgb(255 214 120 / 60%),
+    rgb(252 178 84 / 24%) 55%,
+    transparent 76%
+  );
+
+  filter: blur(3px);
+
+  animation: gc-glow 3.2s ease-in-out infinite;
+}
+
+.gc-diya__flame {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+
+  width: 9px;
+  height: 17px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
+
+  background: radial-gradient(circle at 50% 72%, #fff6d8 0%, #ffcf6a 36%, #f39a1e 70%, #d96a07 100%);
+
+  animation: gc-flicker 2.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.gc-diya__bowl {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+
+  width: 58px;
+  height: 15px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgb(112 56 18 / 40%);
+  border-radius: 3px 3px 22px 22px;
+
+  background: linear-gradient(180deg, #c2531d 0%, #98401a 45%, #6f2a10 100%);
+  box-shadow:
+    inset 0 2px 0 rgb(255 240 210 / 30%),
+    0 3px 6px rgb(80 35 5 / 20%);
+}
+
+.gc-diya__bowl::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+
+  width: 3px;
+  height: 7px;
+
+  transform: translateX(-50%);
+
+  border-radius: 2px;
+
+  background: #3a2a14;
+}
+
+@keyframes gc-flicker {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-50%) scale(1.04, 0.96) rotate(0.6deg);
+  }
+  60% {
+    transform: translateX(-50%) scale(0.97, 1.03) rotate(-0.6deg);
+    opacity: 0.92;
+  }
+}
+
+@keyframes gc-glow {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 480px) {
+  .gc-petal,
+  .gc-spark {
+    display: none;
+  }
+
+  .gc-card__body {
+    padding: 26px 20px 22px;
+  }
+
+  .gc-ganesha {
+    width: 78px;
+    height: 93px;
+    margin-bottom: 14px;
+  }
+
+  .gc-card__logo {
+    width: 88px;
+    margin-bottom: 14px;
+  }
+
+  .gc-card__hindi {
+    font-size: 0.98rem;
+  }
+
+  .gc-card__message {
+    max-width: none;
+    font-size: 0.87rem;
+    line-height: 1.75;
+    margin-top: 12px;
+  }
+
+  .gc-divider {
+    margin-block: 10px;
+  }
+
+  .gc-corner {
+    width: 34px;
+    height: 34px;
+  }
+
+  .gc-card__base {
+    gap: clamp(1.4rem, 6vw, 2rem);
+    padding-top: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-height: 700px) {
+  .gc-card__body {
+    padding-top: 20px;
+    padding-bottom: 18px;
+  }
+
+  .gc-ganesha {
+    width: 88px;
+    height: 105px;
+    margin-bottom: 12px;
+  }
+
+  .gc-card__logo {
+    width: 98px;
+    margin-bottom: 12px;
+  }
+
+  .gc-card__message {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .gc-divider {
+    margin-block: 9px;
+  }
+
+  .gc-card__base {
+    padding-top: 12px;
+    padding-bottom: 9px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .gc-overlay,
+  .gc-card,
+  .gc-card__body,
+  .gc-ganesha,
+  .gc-petal,
+  .gc-spark,
+  .gc-diya__flame,
+  .gc-diya__glow {
+    animation: none;
+  }
+}
