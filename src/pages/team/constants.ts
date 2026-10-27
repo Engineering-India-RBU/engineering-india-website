@@ -201,19 +201,6 @@ export const PRESENT_TEAM: TeamMember[] = [
 },
 
 {
-  name: 'Siddhi Wankhede',
-  role: 'Graphics & Design',
-  year: '3rd Year',
-  branch: 'BIOMED',
-  image: '/team/siddhi-wankhede.webp',
-  socials: {
-    instagram: 'https://www.instagram.com/',
-    linkedin: 'https://www.linkedin.com/',
-    email: 'https://mail.google.com/',
-  },
-},
-
-{
   name: 'Ishan Manekar',
   role: 'Videography & Photography',
   year: '3rd Year',
@@ -239,18 +226,6 @@ export const PRESENT_TEAM: TeamMember[] = [
 },
 
 {
-  name: 'Hardeep Ghotra',
-  role: 'Event Management',
-  year: '3rd Year',
-  branch: 'BIOMED',
-  image: '/team/hardeep-ghotra.webp',
-  socials: {
-    instagram: 'https://www.instagram.com/hardeepghotra1106?stkn=N2w3emUxMmd6enNl',
-    linkedin: 'https://www.linkedin.com/in/hardeep-ghotra/',
-    email: 'hardeepsghotra8181@gmail.com',
-  },
-},
-{
   name: 'Tanvir Kanoje',
   role: 'Literature & Content',
   year: '3rd Year',
@@ -273,19 +248,6 @@ export const PRESENT_TEAM: TeamMember[] = [
     instagram: 'https://www.instagram.com/',
     linkedin: 'https://www.linkedin.com/',
     email: 'yashvi.eirbu@gmail.com',
-  },
-},
-
-{
-  name: 'Jigisha Mandavkar',
-  role: 'Videography & Photography',
-  year: '3rd Year',
-  branch: 'CSE',
-  image: '/team/jigisha-mandavkar.webp',
-  socials: {
-    instagram: 'https://www.instagram.com/jigisha21_06?stkn=YXlleWNwNWprNjFj',
-    linkedin: 'https://www.linkedin.com/in/jigisha-mandavkar-b2b238372/',
-    email: 'jigisha.eirbu@gmail.com',
   },
 },
 
@@ -364,19 +326,6 @@ export const PRESENT_TEAM: TeamMember[] = [
     instagram: 'https://www.instagram.com/jan_vi.15/',
     linkedin: 'https://www.linkedin.com/in/janvi-jangid-54a5043b7/',
     email: 'janvi.eirbu@gmail.com',
-  },
-},
-
-{
-  name: 'Jay Waylalwar',
-  role: 'Coordinator',
-  year: '2nd Year',
-  branch: 'CSE',
-  image: '/team/jay-waylalwar.webp',
-  socials: {
-    instagram: 'https://www.instagram.com/',
-    linkedin: 'https://www.linkedin.com/',
-    email: 'jay.eirbu@gmail.com',
   },
 },
 
@@ -538,18 +487,6 @@ export const PRESENT_TEAM: TeamMember[] = [
 },
 
 {
-  name: 'Arnav Mangde',
-  role: 'Coordinator',
-  year: '2nd Year',
-  branch: 'CSE',
-  image: '/team/arnav-mangde.webp',
-  socials: {
-    instagram: 'https://www.instagram.com/arnav_mangde?stkn=MXA0Nm9kcTBodWdiMw==',
-    linkedin: 'https://www.linkedin.com/in/arnav-mangde-809726436/',
-    email: 'arnav.eirbu@gmail.com',
-  },
-},
-{
   name: 'Hrudesh Jamdar',
   role: 'Coordinator',
   year: '2nd Year',
@@ -641,20 +578,6 @@ export const PRESENT_TEAM: TeamMember[] = [
   },
 },
 
-
-{
-  name: 'Tanishq Kale',
-  role: 'Coordinator',
-  year: '2nd Year',
-  branch: 'CSE',
-  image: '',
-  socials: {
-    instagram: 'https://www.instagram.com/',
-    linkedin: 'https://www.linkedin.com/',
-    email: 'tanishq.eirbu@gmail.com',
-  },
-},
-
 {
   name: 'Khudaija Harmain',
   role: 'Coordinator',
@@ -733,19 +656,6 @@ export const PRESENT_TEAM: TeamMember[] = [
 },
 
 {
-  name: 'Abhay',
-  role: 'Coordinator',
-  year: '2nd Year',
-  branch: '',
-  image: '',
-   socials: {
-    instagram: 'https://www.instagram.com/',
-    linkedin: 'https://www.linkedin.com/',
-    email: 'https://mail.google.com/',
-  },
-},
-
-{
   name: 'Kamakshi Palekar',
   role: 'Coordinator',
   year: '2nd Year',
@@ -755,6 +665,33 @@ export const PRESENT_TEAM: TeamMember[] = [
     instagram: 'https://www.instagram.com/palekarkamakshi?stkn=YTVzZ3NzYTZsZGh5',
     linkedin: 'https://www.linkedin.com/in/kamakshi-palekar-676945369/',
     email: 'kamakshi.eirbu@gmail.com',
+  },
+},
+
+
+{
+  name: 'Tanishq Kale',
+  role: 'Coordinator',
+  year: '2nd Year',
+  branch: 'CSE',
+  image: '',
+  socials: {
+    instagram: 'https://www.instagram.com/',
+    linkedin: 'https://www.linkedin.com/',
+    email: 'tanishq.eirbu@gmail.com',
+  },
+},
+
+{
+  name: 'Abhay',
+  role: 'Coordinator',
+  year: '2nd Year',
+  branch: '',
+  image: '',
+   socials: {
+    instagram: 'https://www.instagram.com/',
+    linkedin: 'https://www.linkedin.com/',
+    email: 'https://mail.google.com/',
   },
 },
 
